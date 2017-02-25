@@ -1,5 +1,5 @@
 class CoffeeTypesController < ApplicationController
-  before_action :set_coffee_type, only: [:show, :update, :destroy]
+  before_action :set_coffee_type, { only: [:show, :update, :destroy] }
 
   def index
     @coffee_types = CoffeeType.all
@@ -23,7 +23,7 @@ class CoffeeTypesController < ApplicationController
     head :no_content
   end
 
-private
+  private
 
   def set_coffee_type
     @coffee_type = CoffeeType.find_by_id!(params.require(:id))

@@ -10,21 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170225194947) do
-
-  create_table "coffee_products", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "coffee_type_id"
-    t.float    "price"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["coffee_type_id"], name: "index_coffee_products_on_coffee_type_id"
+ActiveRecord::Schema.define(version: 20_170_225_194_947) do
+  create_table 'coffee_products', force: :cascade do |t|
+    t.string   'name'
+    t.integer  'coffee_type_id'
+    t.float    'price'
+    t.datetime 'created_at',     null: false
+    t.datetime 'updated_at',     null: false
+    t.index ['coffee_type_id'], name: 'index_coffee_products_on_coffee_type_id'
   end
 
-  create_table "coffee_types", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'coffee_types', force: :cascade do |t|
+    t.string   'name'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
-
 end

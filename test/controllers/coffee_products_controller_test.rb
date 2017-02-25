@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class CoffeeProductsControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -16,8 +16,12 @@ class CoffeeProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create coffee_product" do
-    assert_difference('CoffeeProduct.count') do
-      post coffee_products_url, params: { coffee_product: { coffee_type_id: @coffee_product.coffee_type_id, name: @coffee_product.name, price: @coffee_product.price } }
+    assert_difference("CoffeeProduct.count") do
+      post coffee_products_url, { params: { coffee_product: {
+        coffee_type_id: @coffee_product.coffee_type_id,
+        name: @coffee_product.name,
+        price: @coffee_product.price,
+      } } }
     end
 
     assert_redirected_to coffee_product_url(CoffeeProduct.last)
@@ -34,12 +38,16 @@ class CoffeeProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update coffee_product" do
-    patch coffee_product_url(@coffee_product), params: { coffee_product: { coffee_type_id: @coffee_product.coffee_type_id, name: @coffee_product.name, price: @coffee_product.price } }
+    patch coffee_product_url(@coffee_product), { params: { coffee_product: {
+      coffee_type_id: @coffee_product.coffee_type_id,
+      name: @coffee_product.name,
+      price: @coffee_product.price,
+    } } }
     assert_redirected_to coffee_product_url(@coffee_product)
   end
 
   test "should destroy coffee_product" do
-    assert_difference('CoffeeProduct.count', -1) do
+    assert_difference("CoffeeProduct.count", -1) do
       delete coffee_product_url(@coffee_product)
     end
 
